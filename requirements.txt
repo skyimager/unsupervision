@@ -1,0 +1,12 @@
+numpy
+tqdm
+opencv-python
+matplotlib
+scikit-learn
+seaborn
+transformers
+einops
+flax
+-f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+jax[cuda12_pip]~=0.4.25
+jaxlib
