@@ -1,0 +1,17 @@
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - ffmpeg
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1
+  - pip:
+    - --index-url=https://pypi.org/simple
+    - --trusted-host=pypi.org
+    - -r requirements.txt
