@@ -1,4 +1,5 @@
 import os
+import argparse
 import cv2
 import numpy as np
 
@@ -82,3 +83,17 @@ def run_prediction(video_path: str,
 
     video_cap.release()
     out.release()
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Process a video to detect moving objects in a specified bounding box.")
+    parser.add_argument("video_path", type=str, help="Path to the input video file")
+    parser.add_argument("gauge_bbox", type=str, help="Bounding box for the gauge in the format x1,y1,x2,y2")
+    parser.add_argument("--start_frame_id", type=int, default=0, help="Frame ID to start processing from")
+    parser.add_argument("--window_length", type=int, default=25, help="Length of the sliding window")
+    parser.add_argument("--threshold", type=float, default=1, help="Threshold to detect movement")
+    parser.add_argument("--output_path", type=str, default=None, help="Path to the output video file")
+    args = parser.parse_args()
+
+    gauge_bbox = list(map(int, args.gauge_bbox.split(',')))
+    
+    run_prediction(args.video_path, args.gauge_bbox, args.start_frame_id, args.window_length, args.threshold, args.output_path)
