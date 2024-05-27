@@ -20,7 +20,7 @@
 - Here first we tried to implement out-of-the-box gauge detector. 
 - For this we tried the latest PaliGemma vision-language model from google. 
 
-<div style="text-align: center"><img src="assets/pressure-gauge-detection.png" width="600"/></div>
+<div style="text-align: center"><img src="assets/pressure-gauge-detection.png" width="800"/></div>
 
 - As the original image size is large, we see that initial trials with full input image did not work. 
 - The model resizes the input image to 448x448 (we are using paligemma-3b-mix-448)
