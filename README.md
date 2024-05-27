@@ -30,6 +30,8 @@
 
 <div style="text-align: center"><img src="assets/needle2-sliced-gauge-prediction.png" width="400"/></div>
 
+- Final result for sliced-based inferecing gives below result for frame from 'needle.mp4'
+
 <div style="text-align: center"><img src="assets/needle1-sliced-gauge-prediction.png" width="400"/></div>
 
 ### Moving Needle Prediction
@@ -57,13 +59,13 @@
  - Here we want to do instance segmentation of the kidneys - left kidnet and right kidney
  - For this I first tried PaliGemma model to verify results with pretrained model:
 
-<div style="text-align: center"><img src="assets/segment-kidneys.png" width="500"/></div>
+<div style="text-align: center"><img src="assets/segment-kidneys.png" width="800"/></div>
 
-<div style="text-align: center"><img src="assets/detect-kidneys.png" width="500"/></div>
+<div style="text-align: center"><img src="assets/detect-kidneys.png" width="800"/></div>
 
  - We also setup the PaliGemma model locally to verify its performace and runtime complexity:
 
- <div style="text-align: center"><img src="assets/paligemma_detect_segment.png" width="400"/></div>
+ <div style="text-align: center"><img src="assets/paligemma_detect_segment.png" width="600"/></div>
 
  - As we see the mask obtained from PaliGemma is not accurate, I also tried other approches like CLIPSeg
 
