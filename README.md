@@ -1,7 +1,17 @@
 # unsupervision
 
+- [Project Setup](#setup)
 - [Moving needle prediction](#task-1)
 - [Kidney segmentation](#task-2)
+
+<a name="setup"></a>
+## Project Setup
+ - Makefile targets are defined for project setup. 
+ - To create a new environment execute: `make environment`
+ - To update an existing environment execute: `make update_environment`
+ - To install notebook dependencies run: `make jupyter-install`
+ - To start a notebook instance run: `make jupyter-start`. This will start a jupyter instance as a background thread. 
+ - To detect a moving needle run the `predict_moving_needle` target in Makefile after setting up necessary variable inputs. 
 
 <a name="task-1"></a>
 ## Task - 1 Predict moving needle in a pressure gauge

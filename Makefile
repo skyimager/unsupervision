@@ -51,3 +51,16 @@ jupyter-start:
 
 jupyter-stop:
 	jupyter notebook stop $(NOTEBOOK_PORT)
+
+#############
+# Task -1  #
+#############
+
+.PHONY: predict
+
+VIDEO_PATH := "data/videos/needle_encoded.mp4"
+GAUGE_BBOX := "944, 0, 1043, 102"
+predict_moving_needle:
+	python predict_moving_needle.py \
+					$(VIDEO_PATH) \
+					$(GAUGE_BBOX)
