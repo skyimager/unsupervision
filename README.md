@@ -10,7 +10,7 @@
 - Here first we tried to implement out-of-the-box gauge detector. 
 - For this we tried the latest PaliGemma vision-language model from google. 
 
-<div style="text-align: center"><img src="assets/pressure-gauge-detection.png" width="300"/></div>
+<div style="text-align: center"><img src="assets/pressure-gauge-detection.png" width="600"/></div>
 
 - As the original image size is large, we see that initial trials with full input image did not work. 
 - The model resizes the input image to 448x448 (we are using paligemma-3b-mix-448)
@@ -18,9 +18,9 @@
 - The sliced predictions are then merged into the large image. 
 - Final result for sliced-based inferecing gives below result for frame from 'needle2.mp4'
 
-<div style="text-align: center"><img src="assets/needle2-sliced-gauge-prediction.png" width="300"/></div>
+<div style="text-align: center"><img src="assets/needle2-sliced-gauge-prediction.png" width="400"/></div>
 
-<div style="text-align: center"><img src="assets/needle1-sliced-gauge-prediction.png" width="300"/></div>
+<div style="text-align: center"><img src="assets/needle1-sliced-gauge-prediction.png" width="400"/></div>
 
 ### Moving Needle Prediction
 
@@ -32,6 +32,9 @@
 - Here we take into consideration that the neddle may not move considerably if adjacent frames are compared. 
 - So, we select a historical average for comparison here. 
 - results for the 2 videos are present in data folder. 
+
+<div style="text-align: center"><img src="assets/needle_result.png" width="500"/></div>
+
 - More experiments are needed to determine if the current algorithm is robust or not. 
 
 ### Future Task
@@ -44,21 +47,24 @@
  - Here we want to do instance segmentation of the kidneys - left kidnet and right kidney
  - For this I first tried PaliGemma model to verify results with pretrained model:
 
-<div style="text-align: center"><img src="assets/segment-kidneys.png" width="300"/></div>
+<div style="text-align: center"><img src="assets/segment-kidneys.png" width="500"/></div>
 
-<div style="text-align: center"><img src="assets/detect-kidneys.png" width="300"/></div>
+<div style="text-align: center"><img src="assets/detect-kidneys.png" width="500"/></div>
 
  - We also setup the PaliGemma model locally to verify its performace and runtime complexity:
 
- <div style="text-align: center"><img src="assets/paligemma_detect_segment.png" width="300"/></div>
+ <div style="text-align: center"><img src="assets/paligemma_detect_segment.png" width="400"/></div>
 
  - As we see the mask obtained from PaliGemma is not accurate, I also tried other approches like CLIPSeg
+
+ <div style="text-align: center"><img src="assets/clip-seg.png" width="400"/></div>
+
  - But botht the models did not gave acceptable results. 
  - After this we tried traiditional CV based segmentation models. 
  - The current algorithm is a WIP and it is just to demostrate the possibility of what can be done with traditional CV based techniques. 
  - The result from traditional CV pipeline is: 
 
- <div style="text-align: center"><img src="assets/cv_traditional.png" width="300"/></div>
+ <div style="text-align: center"><img src="assets/cv_traditional.png" width="400"/></div>
 
  ### Future task:
   - For custom model, an ideal approach here would be to train a Unet-type model like Deeplabv3 on a use-case specific dataset. 
